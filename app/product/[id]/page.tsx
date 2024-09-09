@@ -115,7 +115,7 @@ export default function ProductDetailPage() {
                             <Label htmlFor="quantity" className="text-sm font-medium text-gray-900 dark:text-white">
                                 Quantity
                             </Label>
-                            <Select value={quantity.toString()} onValueChange={(value) => setQuantity(parseInt(value))}>
+                            <Select value={quantity.toString()} onValueChange={(value) => setQuantity(Number.parseInt(value))}>
                                 <SelectTrigger className="w-20">
                                     <SelectValue placeholder="Qty" />
                                 </SelectTrigger>
@@ -171,7 +171,7 @@ export default function ProductDetailPage() {
                     <div className="grid md:grid-cols-4 gap-8">
                         <div>
                             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">About Us</h3>
-                            <p className="text-gray-600 dark:text-gray-300 text-sm">AudioPhile is your one-stop shop for high-quality audio equipment. We're passionate about delivering the best sound experience to our customers.</p>
+                            <p className="text-gray-600 dark:text-gray-300 text-sm">AudioPhile is your one-stop shop for high-quality audio equipment. We&apos;re passionate about delivering the best sound experience to our customers.</p>
                         </div>
                         <div>
                             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h3>
