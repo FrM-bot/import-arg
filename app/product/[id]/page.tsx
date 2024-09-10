@@ -1,17 +1,17 @@
 'use client'
-import { useState } from 'react'
+// import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Star, ShoppingCart, Heart, Share2 } from 'lucide-react'
+// import { Star, ShoppingCart, Heart, Share2 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+// import { Label } from "@/components/ui/label"
+// import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+// import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function ProductDetailPage() {
-    const [quantity, setQuantity] = useState(1)
+    // const [quantity, setQuantity] = useState(1)
 
     const product = {
         name: "Premium Wireless Headphones",
@@ -38,22 +38,22 @@ export default function ProductDetailPage() {
 
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
-            <header className="bg-white dark:bg-gray-800 shadow-sm">
-                <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-                    <Link href="/" className="text-2xl font-bold text-gray-800 dark:text-white">
-                        AudioPhile
-                    </Link>
-                    <nav className="hidden md:flex space-x-4">
-                        <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Home</Link>
-                        <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Products</Link>
-                        <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">About</Link>
-                        <Link href="#" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Contact</Link>
-                    </nav>
-                    <Button variant="ghost" size="icon">
-                        <ShoppingCart className="h-6 w-6" />
-                        <span className="sr-only">View cart</span>
-                    </Button>
-                </div>
+            <header className="px-4 lg:px-6 h-14 flex items-center">
+                <Link className="flex items-center justify-center" href="#">
+                {/* <ShoppingCart className="h-6 w-6" /> */}
+                <h1 className=" text-2xl">ImportARG</h1>
+                </Link>
+                <nav className="ml-auto flex gap-4 sm:gap-6">
+                <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+                    Productos
+                </Link>
+                <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+                    Sobre nosotros
+                </Link>
+                <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+                    Contactanos
+                </Link>
+                </nav>
             </header>
 
             <main className="container mx-auto px-4 py-8">
@@ -87,19 +87,19 @@ export default function ProductDetailPage() {
                         <div>
                             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{product.name}</h1>
                             <p className="mt-2 text-3xl font-bold text-gray-900 dark:text-white">${product.price.toFixed(2)}</p>
-                            <div className="mt-4 flex items-center">
+                            {/* <div className="mt-4 flex items-center">
                                 <div className="flex items-center">
                                     {[...Array(5)].map((_, i) => (
                                         <Star key={i.toString()} className={`h-5 w-5 ${i < Math.floor(product.rating) ? 'text-yellow-400' : 'text-gray-300'}`} />
                                     ))}
                                 </div>
                                 <p className="ml-2 text-sm text-gray-500 dark:text-gray-400">{product.reviews} reviews</p>
-                            </div>
+                            </div> */}
                         </div>
 
                         <p className="text-gray-700 dark:text-gray-300">{product.description}</p>
 
-                        <div>
+                        {/* <div>
                             <h3 className="text-sm font-medium text-gray-900 dark:text-white">Color</h3>
                             <RadioGroup defaultValue={product.colors[0]} className="mt-2">
                                 {product.colors.map((color) => (
@@ -109,9 +109,9 @@ export default function ProductDetailPage() {
                                     </div>
                                 ))}
                             </RadioGroup>
-                        </div>
+                        </div> */}
 
-                        <div className="flex items-center space-x-4">
+                        {/* <div className="flex items-center space-x-4">
                             <Label htmlFor="quantity" className="text-sm font-medium text-gray-900 dark:text-white">
                                 Quantity
                             </Label>
@@ -125,28 +125,28 @@ export default function ProductDetailPage() {
                                     ))}
                                 </SelectContent>
                             </Select>
-                        </div>
+                        </div> */}
 
                         <div className="flex space-x-4">
                             <Button className="flex-1">
-                                Add to Cart
-                                <ShoppingCart className="ml-2 h-4 w-4" />
+                                Contactar por WhatsApp
+                                {/* <ShoppingCart className="ml-2 h-4 w-4" /> */}
                             </Button>
-                            <Button variant="outline" size="icon">
+                            {/* <Button variant="outline" size="icon">
                                 <Heart className="h-4 w-4" />
                                 <span className="sr-only">Add to wishlist</span>
                             </Button>
                             <Button variant="outline" size="icon">
                                 <Share2 className="h-4 w-4" />
                                 <span className="sr-only">Share product</span>
-                            </Button>
+                            </Button> */}
                         </div>
 
                         <Tabs defaultValue="description">
                             <TabsList>
                                 <TabsTrigger value="description">Description</TabsTrigger>
-                                <TabsTrigger value="features">Features</TabsTrigger>
-                                <TabsTrigger value="shipping">Shipping</TabsTrigger>
+                                {/* <TabsTrigger value="features">Features</TabsTrigger>
+                                <TabsTrigger value="shipping">Shipping</TabsTrigger> */}
                             </TabsList>
                             <TabsContent value="description" className="mt-4 text-sm text-gray-700 dark:text-gray-300">
                                 <p>{product.description}</p>
