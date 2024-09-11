@@ -20,13 +20,13 @@ export default function Header() {
                     />
                 </Link>
                 <nav className="sm:ml-auto flex gap-4  sm:gap-6">
-                    <a className="text-sm font-medium hover:underline underline-offset-4" href='#products'>
+                    <Link className="text-sm font-medium hover:underline underline-offset-4" href={`${routes.home}#products`}>
                         Productos
-                    </a>
-                    <Link className="text-sm font-medium hover:underline underline-offset-4" href='#about'>
+                    </Link>
+                    <Link className="text-sm font-medium hover:underline underline-offset-4" href={`${routes.home}#about`}>
                         Sobre nosotros
                     </Link>
-                    <Link className="text-sm font-medium hover:underline underline-offset-4" href='#contact'>
+                    <Link className="text-sm font-medium hover:underline underline-offset-4" href={`${routes.home}#contact`}>
                         Contáctenos
                     </Link>
                 </nav>

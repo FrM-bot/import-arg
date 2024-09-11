@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -23,11 +23,11 @@ export default function GradualSpacing({
   className,
 }: GradualSpacingProps) {
   return (
-    <div className="flex justify-center space-x-1 relative">
+    <div className="flex space-x-1 relative flex-wrap">
       <AnimatePresence>
         {text.split("").map((char, i) => (
           <motion.h1
-            key={i}
+            key={i.toString()}
             initial="hidden"
             animate="visible"
             exit="hidden"

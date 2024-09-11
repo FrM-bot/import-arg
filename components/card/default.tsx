@@ -17,11 +17,11 @@ type Props = {
 
 export function ProductCard({ title, image, price, id }: Props) {
     return (
-        <div className="border border-black/[0.2] dark:border-white/[0.2] flex flex-col items-start max-w-sm mx-auto p-4 relative hover:bg-white duration-150">
-            <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
-            <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
-            <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
-            <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+        <div className="border border-black/[0.2] dark:border-white/[0.2] flex flex-col items-start max-w-sm mx-auto p-4 relative hover:bg-white duration-150 group hover:shadow-md">
+            <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black group-hover:rotate-45 duration-150" />
+            <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black group-hover:rotate-45 duration-150" />
+            <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black group-hover:rotate-45 duration-150" />
+            <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black group-hover:rotate-45 duration-150" />
             <Link href={routes.products.profile(id)}>
                 <picture>
                     <img src={image.src} alt={image.alt} className="object-cover w-full h-full aspect-square" />
