@@ -75,7 +75,7 @@ export default function ProductLandingPage() {
                 Descubre nuestra colección de productos
               </span> */}
               <GradualSpacing
-                className="font-display text-center text-4xl font-bold tracking-[-0.1em] text-neutral-100 dark:text-white md:text-7xl md:leading-[5rem] z-10"
+                className="font-display text-center text-5xl font-bold tracking-[-0.1em] text-neutral-100 dark:text-white md:text-7xl md:leading-[5rem] z-10"
                 text="Descubre nuestra colección de productos"
               />
               <FadeText
