@@ -3,14 +3,21 @@ import { useState } from 'react'
 // import Image from 'next/image'
 // import Link from 'next/link'
 // import { Star, ShoppingCart, Heart, Share2 } from 'lucide-react'
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 // import { Input } from "@/components/ui/input"
 // import { Label } from "@/components/ui/label"
 // import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 // import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ProductsJSON from "@/data/products.json"
-import { formatNumber } from '@/lib/utils'
+// import { formatNumber } from '@/lib/utils'
+import NumberTicker from '@/components/magicui/number-ticker'
+import ShimmerButton from '@/components/magicui/shimmer-button'
+import { ArrowLeftIcon } from '@radix-ui/react-icons'
+import { routes } from '@/lib/routes'
+import Link from 'next/link'
+import { buttonVariants } from '@/components/ui/button'
+// import ShinyButton from '@/components/magicui/shiny-button'
 
 const TabValues = {
     description: {
@@ -32,9 +39,14 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
     }
 
     return (
-        <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
-            <main className="container mx-auto px-4 py-8">
-                <div className="grid md:grid-cols-2 gap-8">
+        <div className="bg-neutral-100 dark:bg-gray-900 py-4">
+            <main className="container mx-auto">
+                <div className='mb-4 mx-auto inline-block'>
+                    <Link href={routes.home} className={buttonVariants()}>
+                        <ArrowLeftIcon />
+                    </Link>
+                </div>
+                <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-4">
                         <div className="relative aspect-video overflow-hidden rounded-lg bg-white dark:bg-gray-700">
                             <img
@@ -66,7 +78,9 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                     <div className="space-y-3">
                         <div>
                             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">{product?.name}</h1>
-                            <p className="mt-2 text-3xl font-bold text-gray-900 dark:text-white">{formatNumber(product?.price || 0)}</p>
+                            <p className="mt-2 text-3xl font-bold text-gray-900 dark:text-white">
+                                <NumberTicker value={product?.price || 0} />
+                            </p>
                             {/* <div className="mt-4 flex items-center">
                                 <div className="flex items-center">
                                     {[...Array(5)].map((_, i) => (
@@ -116,7 +130,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                                 <p>{product?.description}</p>
                             </TabsContent>
                             <TabsContent value={TabValues.features.value} className="mt-3">
-                                <ul className="list-disc pl-5 space-y-2 text-sm text-gray-700 bg-white p-2 dark:text-gray-300">
+                                <ul className="list-disc pl-7 space-y-2 text-sm text-gray-700 bg-white p-2 dark:text-gray-300">
                                     {product?.features.map((feature, index) => (
                                         <li key={index.toString()}>{feature}</li>
                                     ))}
@@ -125,10 +139,15 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                         </Tabs>
 
                         <div className="flex space-x-4">
-                            <Button onClick={onContact} className="flex-1">
+                            {/* <Button onClick={onContact} className="flex-1">
                                 Contactar por WhatsApp
-                                {/* <ShoppingCart className="ml-2 h-4 w-4" /> */}
-                            </Button>
+                            </Button> */}
+                            <ShimmerButton onClick={onContact} className="shadow-2xl rounded-none w-full" borderRadius='0px'>
+                                <span className="whitespace-pre-wrap text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg">
+                                    Contactar por WhatsApp
+                                </span>
+                            </ShimmerButton>
+                            {/* <ShinyButton text="Contactar por WhatsApp" className="w-full bg-neutral-950 text-white" /> */}
                             {/* <Button variant="outline" size="icon">
                                 <Heart className="h-4 w-4" />
                                 <span className="sr-only">Add to wishlist</span>

@@ -12,5 +12,6 @@ export const formatNumber = (
       return new Intl.NumberFormat(locales, option).format(value)
     } catch (error) {
       console.error(error)
+      return null
     }
   }
