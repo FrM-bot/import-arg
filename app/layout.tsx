@@ -35,11 +35,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      {/* <head>
-
-      </head> */}
       <body
-        className={`${onest.className} antialiased`}
+        className={`${onest.className} antialiased bg-muted`}
       >
         <Header />
         {children}

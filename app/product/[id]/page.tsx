@@ -59,8 +59,8 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                 }}
             />
 
-            <div className="bg-neutral-100 dark:bg-gray-900 py-4">
-                <main className="container mx-auto">
+            {/* <div className="bg-neutral-100 dark:bg-gray-900 py-4"> */}
+                <main className="container mx-auto pt-20 pb-6">
                     <div className='mb-4 mx-auto inline-block'>
                         <Link href={routes.home} className={buttonVariants()}>
                             <ArrowLeftIcon />
@@ -68,26 +68,27 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                     </div>
                     <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-4">
-                            <div className="relative aspect-video overflow-hidden rounded-lg bg-white dark:bg-gray-700">
+                            <picture className="aspect-video overflow-hidden rounded-lg bg-white dark:bg-gray-700 flex">
                                 <img
                                     src={selectedImage.src}
                                     alt={selectedImage.alt}
                                     className="object-contain h-full w-full"
                                 />
-                            </div>
-                            <div className="grid grid-cols-4 gap-4">
+                            </picture>
+                            <div className="grid md:grid-cols-4 grid-cols-3 gap-2">
                                 {product?.img.map((img, index) => (
                                     <button
                                         key={index.toString()}
                                         type="button"
                                         onClick={() => setSelectedImage({ src: img, alt: `${product.name} - Image ${index + 1}` })}
+                                        className='flex'
                                     >
                                         <picture
-                                            key={index.toString()} className="aspect-square relative overflow-hidden rounded-lg bg-gray-200 dark:bg-gray-700">
+                                            key={index.toString()} className="rounded-lg">
                                             <img
                                                 src={img}
                                                 alt={`${product.name} - ${index + 1}`}
-                                                className="w-full h-full object-center object-cover"
+                                                className="object-center object-contain bg-white aspect-video"
                                             />
                                         </picture>
                                     </button>
@@ -181,7 +182,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                         </div>
                     </div>
                 </main>
-            </div>
+            {/* </div> */}
         </>
     )
 }
