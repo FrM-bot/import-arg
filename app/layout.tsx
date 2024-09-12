@@ -20,12 +20,6 @@ import Footer from "@/components/footer";
 
 const onest = Onest({ subsets: ['latin'] })
 
-// export const metadata: Metadata = {
-//   metadataBase: new URL(CLIENT_BASE_URL),
-//   title: MetadataJSON.title,
-//   description: MetadataJSON.description,
-// };
-
 // export const metadata = baseMetadata
 
 export default function RootLayout({
