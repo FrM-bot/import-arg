@@ -19,10 +19,10 @@ export default function Metadata({
             <meta property="og:url" content={MetadataJSON.url} />
             <meta property="og:site_name" content={MetadataJSON.title} />
             <meta property="og:locale" content="es_ES" />
-            <meta property="og:image:url" content={image.url} />
+            <meta property="og:image:url" content={MetadataJSON.url + image.url} />
             <meta property="og:image:width" content="800" />
             <meta property="og:image:height" content="600" />
-            <meta property="og:image:url" content={image.url} />
+            <meta property="og:image:url" content={MetadataJSON.url + image.url} />
             <meta property="og:image:width" content="1800" />
             <meta property="og:image:height" content="1600" />
             <meta property="og:image:alt" content={image.alt} />

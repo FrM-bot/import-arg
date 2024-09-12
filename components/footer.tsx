@@ -23,7 +23,7 @@ export default function Footer() {
                     </div> */}
                     <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Contáctenos</h3>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm">1234 Audio Lane<br />Soundville, MU 56789<br />support@audiophile.com<br />(555) 123-4567</p>
+                        <p className="text-gray-600 dark:text-gray-300 text-sm">1234 Audio Lane<br />Soundville, MU 56789<br />support@audiophile.com<br />+54 9 362 412-5046</p>
                     </div>
                     {/* <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Newsletter</h3>
