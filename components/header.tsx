@@ -5,7 +5,7 @@ import { FadeText } from './magicui/fade-text'
 
 export default function Header() {
     return (
-        <header className="px-4 lg:px-6 sm:h-14 py-4 flex items-center justify-center fixed top-0 bg-neutral-950/80 backdrop-blur-md text-neutral-200 z-50 w-full">
+        <header className="px-4 lg:px-6 sm:h-14 py-4 flex items-center justify-center fixed top-0 bg-black/90 backdrop-blur-md text-neutral-200 z-50 w-full">
             <div className='container flex flex-col sm:flex-row sm:items-center items-center'>
                 <Link className="flex items-center justify-center" href={routes.home}>
                     {/* <ShoppingCart className="h-6 w-6" /> */}
