@@ -6,7 +6,7 @@
 import { ProductCard } from "@/components/card"
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern"
 import { FadeText } from "@/components/magicui/fade-text"
-import GradualSpacing from "@/components/magicui/gradual-spacing"
+// import GradualSpacing from "@/components/magicui/gradual-spacing"
 // import Meteors from "@/components/magicui/meteors"
 import ProductsJSON from "@/data/products.json"
 import { cn } from "@/lib/utils"
@@ -15,6 +15,8 @@ import MetadataJSON from '@/data/metadata.json'
 // import Metadata from "@/components/metadata"
 import ContactButton from "@/components/button/contact"
 import type { Metadata } from "next"
+import BoxReveal from "@/components/magicui/box-reveal"
+// import HyperText from "@/components/magicui/hyper-text"
 
 export const metadata: Metadata = {
   metadataBase: new URL(MetadataJSON.url),
@@ -48,12 +50,27 @@ export default function ProductLandingPage() {
       >
         <div className="container relative flex h-[100dvh] w-full items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
           <div>
-            <GradualSpacing
-              className="font-display text-center text-5xl font-bold tracking-[-0.1em] text-neutral-100 dark:text-white md:text-7xl md:leading-[5rem] z-10"
+            {/* <GradualSpacing
+              className="font-display text-center text-5xl font-bold tracking-tighter text-neutral-100 dark:text-white md:text-7xl md:leading-[5rem] z-10"
               text="Descubre nuestra colección de productos"
-            />
+            />  */}
+           
+            <BoxReveal boxColor="#ffffff75" duration={0.5}>
+              <p className="md:text-7xl text-5xl font-semibold">
+                Descubre nuestra colección de productos<span className="text-neutral-50">.</span>
+              </p>
+            </BoxReveal>
+            {/* <BoxReveal boxColor="#ffffff78" duration={0.5}>
+              <p className="md:text-xl">
+                Mejora tu estilo con nuestros productos premium. Diseñados para brindar comodidad y fabricados para durar.
+              </p>
+            </BoxReveal> */}
+            {/* <HyperText
+              className="text-4xl font-bold text-white dark:text-white"
+              text="Descubre nuestra colección de productos"
+            /> */}
             <FadeText
-              className="max-w-[600px] text-neutral-100 md:text-xl z-10"
+              className="max-w-[600px] text-neutral-100 md:text-xl z-10 mt-2"
               direction="up"
               framerProps={{
                 show: { transition: { delay: 1.5 } },
