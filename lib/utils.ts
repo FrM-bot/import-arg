@@ -17,3 +17,7 @@ export const WhatsAppUrl = ({ text }: { text?: string } = {}) => {
   }
   return url.toString()
 }
+
+export function formatGradualSpacingText(text: string) {
+  return text.replace(/\s/g, " | ")
+}

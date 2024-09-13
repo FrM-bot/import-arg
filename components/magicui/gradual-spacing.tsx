@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 
-import { cn } from "@/lib/utils";
+import { cn, formatGradualSpacingText } from "@/lib/utils";
 
 interface GradualSpacingProps {
   text: string;
@@ -25,8 +25,8 @@ export default function GradualSpacing({
   return (
     <div className="flex space-x-1 relative flex-wrap">
       <AnimatePresence>
-        {text.split("").map((char, i) => (
-          <motion.h1
+        {formatGradualSpacingText(text).split(" ").map((char, i) => (
+          <motion.span
             key={i.toString()}
             initial="hidden"
             animate="visible"
@@ -35,8 +35,8 @@ export default function GradualSpacing({
             transition={{ duration, delay: i * delayMultiple }}
             className={cn("drop-shadow-sm z-0", className)}
           >
-            {char === " " ? <span>&nbsp;</span> : char}
-          </motion.h1>
+            {char === "|" ? <span>&nbsp;</span> : char}
+          </motion.span>
         ))}
       </AnimatePresence>
     </div>
