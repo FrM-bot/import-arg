@@ -1,26 +1,9 @@
-// import type { Metadata } from "next";
 import { Onest } from 'next/font/google'
-// import localFont from "next/font/local";
-import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-// import { CLIENT_BASE_URL } from '@/lib/config'
-// import MetadataJSON from '@/data/metadata.json'
-// import { baseMetadata } from "@/lib/metadata";
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
+import "./globals.css"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 const onest = Onest({ subsets: ['latin'] })
-
-// export const metadata = baseMetadata
 
 export default function RootLayout({
   children,
@@ -30,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${onest.className} antialiased bg-muted`}
+        className={`${onest.className} antialiased bg-muted dark:text-neutral-100 text-neutral-700`}
       >
         <Header />
         {children}

@@ -87,7 +87,7 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
                                 <TabsTrigger value={TabValues.features.value}>{TabValues.features.title}</TabsTrigger>
                             </TabsList>
                             <TabsContent value={TabValues.description.value} className="mt-3 text-sm text-gray-700 bg-white p-2 dark:text-gray-300">
-                                <p>{product?.description}</p>
+                                {product?.description.split('|').map(paragraph => <p key={paragraph}>{paragraph}</p>)}
                             </TabsContent>
                             <TabsContent value={TabValues.features.value} className="mt-3">
                                 <ul className="list-disc pl-7 space-y-2 text-sm text-gray-700 bg-white p-2 dark:text-gray-300">

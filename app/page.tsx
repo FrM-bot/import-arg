@@ -1,22 +1,13 @@
-// import Link from "next/link"
-// import { Button } from "@/components/ui/button"
-// import { Input } from "@/components/ui/input"
-// import { products } from "@/mockData/products"
-// import Header from "@/components/header"
 import { ProductCard } from "@/components/card"
 import AnimatedGridPattern from "@/components/magicui/animated-grid-pattern"
 import { FadeText } from "@/components/magicui/fade-text"
-// import GradualSpacing from "@/components/magicui/gradual-spacing"
-// import Meteors from "@/components/magicui/meteors"
 import ProductsJSON from "@/data/products.json"
 import { cn } from "@/lib/utils"
 import { ContactUsSection } from "./contact"
 import MetadataJSON from '@/data/metadata.json'
-// import Metadata from "@/components/metadata"
 import ContactButton from "@/components/button/contact"
 import type { Metadata } from "next"
 import BoxReveal from "@/components/magicui/box-reveal"
-// import HyperText from "@/components/magicui/hyper-text"
 
 export const metadata: Metadata = {
   metadataBase: new URL(MetadataJSON.url),
@@ -50,25 +41,11 @@ export default function ProductLandingPage() {
       >
         <div className="container relative flex h-[100dvh] w-full items-center justify-center overflow-hidden rounded-lg bg-background md:shadow-xl">
           <div>
-            {/* <GradualSpacing
-              className="font-display text-center text-5xl font-bold tracking-tighter text-neutral-100 dark:text-white md:text-7xl md:leading-[5rem] z-10"
-              text="Descubre nuestra colección de productos"
-            />  */}
-           
             <BoxReveal boxColor="#ffffff75" duration={0.5}>
-              <p className="md:text-7xl text-5xl font-semibold">
-                Descubre nuestra colección de productos<span className="text-neutral-50">.</span>
+              <p className="md:text-7xl text-5xl font-semibold text-neutral-50">
+                Descubre nuestra colección de productos<span>.</span>
               </p>
             </BoxReveal>
-            {/* <BoxReveal boxColor="#ffffff78" duration={0.5}>
-              <p className="md:text-xl">
-                Mejora tu estilo con nuestros productos premium. Diseñados para brindar comodidad y fabricados para durar.
-              </p>
-            </BoxReveal> */}
-            {/* <HyperText
-              className="text-4xl font-bold text-white dark:text-white"
-              text="Descubre nuestra colección de productos"
-            /> */}
             <FadeText
               className="max-w-[600px] text-neutral-100 md:text-xl z-10 mt-2"
               direction="up"
@@ -114,10 +91,9 @@ export default function ProductLandingPage() {
           <div className="container">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Sobre nosotros</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-neutral-50">Sobre nosotros</h2>
                 <p className="max-w-2xl text-neutral-100 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   {MetadataJSON.description}
-                  {/* Somos una empresa dedicada a la importación de productos tecnológicos, comprometidos en ofrecer artículos de calidad a precios accesibles, garantizando la satisfacción de nuestros clientes con las últimas tendencias en tecnología */}
                 </p>
               </div>
             </div>
