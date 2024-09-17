@@ -19,7 +19,7 @@ export const ContactUsSection = () => {
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Contáctenos</h2>
-                        <p className="max-w-2xl text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                        <p className="max-w-2xl md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                             Contáctenos por algún producto que tengas en mente o por cualquier otro tema que te interese.
                         </p>
                     </div>
