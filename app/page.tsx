@@ -100,7 +100,7 @@ export default function ProductLandingPage() {
           </div>
         </section>
         <ContactUsSection />
-        <div className="sticky bottom-16 left-[90%] bg-transparent w-fit h-fit pr-6 pt-6">
+        <div className="sticky bottom-16 left-[90%] bg-transparent w-fit h-fit p-6">
           <ContactButton />
         </div>
       </div>

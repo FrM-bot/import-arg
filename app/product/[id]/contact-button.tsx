@@ -5,7 +5,7 @@ import { WhatsAppUrl } from "@/lib/utils"
 
 export default function ContactButton({ productName }: { productName: string }) {
     const onContact = () => {
-        window.open(WhatsAppUrl({ text: productName }), '_blank')
+        window.open(WhatsAppUrl({ text: productName }), '_blank', 'noopener noreferrer')
     }
     return (
         <ShimmerButton onClick={onContact} className="shadow-2xl rounded-none w-full" borderRadius='0px'>
