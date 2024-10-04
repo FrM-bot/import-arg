@@ -10,6 +10,7 @@ import Images from './images'
 import ContactButton from "./contact-button"
 import { notFound } from "next/navigation"
 import MetadataJSON from '@/data/metadata.json'
+import { cn } from "@/lib/utils"
 
 const TabValues = {
     description: {
@@ -64,7 +65,7 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
         <>
             <main className="container mx-auto pt-20 pb-6">
                 <div className='mb-4 mx-auto inline-block'>
-                    <Link href={routes.home} className={buttonVariants()}>
+                    <Link href={routes.home} className={cn(buttonVariants(), 'p-2 h-auto')}>
                         <ArrowLeftIcon />
                     </Link>
                 </div>
