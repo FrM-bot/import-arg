@@ -27,9 +27,7 @@ export function ProductCard({ title, image, price, id }: Props) {
                     <img src={image.src} alt={image.alt} className="object-contain w-full h-full aspect-square bg-white" />
                 </picture>
             </Link>
-            {/* <EvervaultCard text="hover" /> */}
-
-            <Link href={routes.products.profile(id)} className="dark:text-white text-black mt-4 text-sm font-light">
+            <Link title={title} href={routes.products.profile(id)} className="dark:text-white text-black mt-4 text-sm font-light line-clamp-1">
                 {title}
             </Link>
             <p className="text-sm border font-light dark:border-white/[0.2] rounded-full mt-4 text-black border-neutral-900 dark:text-white px-3 py-0.5">
