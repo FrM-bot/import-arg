@@ -216,10 +216,10 @@ const CarouselPrevious = React.forwardRef<
       onClick={scrollPrev}
       {...props}
     >
-      <Icon className="absolute size-4 -top-2 -left-2 dark:text-white text-neutral-500 group-hover:rotate-45 duration-150" />
-      <Icon className="absolute size-4 -bottom-2 -left-2 dark:text-white text-neutral-500 group-hover:rotate-45 duration-150" />
-      <Icon className="absolute size-4 -top-2 -right-2 dark:text-white text-neutral-500 group-hover:rotate-45 duration-150" />
-      <Icon className="absolute size-4 -bottom-2 -right-2 dark:text-white text-neutral-500 group-hover:rotate-45 duration-150" />
+      <Icon className="absolute size-4 -top-2 -left-2 dark:text-white text-black group-hover:rotate-45 duration-150" />
+      <Icon className="absolute size-4 -bottom-2 -left-2 dark:text-white text-black group-hover:rotate-45 duration-150" />
+      <Icon className="absolute size-4 -top-2 -right-2 dark:text-white text-black group-hover:rotate-45 duration-150" />
+      <Icon className="absolute size-4 -bottom-2 -right-2 dark:text-white text-black group-hover:rotate-45 duration-150" />
       <ArrowLeftIcon className="h-4 w-4" />
       <span className="sr-only">Previous slide</span>
     </Button>
@@ -249,10 +249,10 @@ const CarouselNext = React.forwardRef<
       onClick={scrollNext}
       {...props}
     >
-      <Icon className="absolute size-4 -top-2 -left-2 dark:text-white text-neutral-500 group-hover:rotate-45 duration-150" />
-      <Icon className="absolute size-4 -bottom-2 -left-2 dark:text-white text-neutral-500 group-hover:rotate-45 duration-150" />
-      <Icon className="absolute size-4 -top-2 -right-2 dark:text-white text-neutral-500 group-hover:rotate-45 duration-150" />
-      <Icon className="absolute size-4 -bottom-2 -right-2 dark:text-white text-neutral-500 group-hover:rotate-45 duration-150" />
+      <Icon className="absolute size-4 -top-2 -left-2 dark:text-white text-black group-hover:rotate-45 duration-150" />
+      <Icon className="absolute size-4 -bottom-2 -left-2 dark:text-white text-black group-hover:rotate-45 duration-150" />
+      <Icon className="absolute size-4 -top-2 -right-2 dark:text-white text-black group-hover:rotate-45 duration-150" />
+      <Icon className="absolute size-4 -bottom-2 -right-2 dark:text-white text-black group-hover:rotate-45 duration-150" />
       <ArrowRightIcon className="h-4 w-4" />
       <span className="sr-only">Next slide</span>
     </Button>
