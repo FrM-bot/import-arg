@@ -8,10 +8,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const WhatsAppUrlBaseUrl = `https://wa.me/${env.PHONE_NUMBER}`
+export const whatsAppUrlBaseUrl = `https://wa.me/${env.PHONE_NUMBER}`
 
-export const WhatsAppUrl = ({ text }: { text?: string } = {}) => {
-  const url = new URL(WhatsAppUrlBaseUrl)
+export const getWhatsAppUrl = ({ text }: { text?: string } = {}) => {
+  const url = new URL(whatsAppUrlBaseUrl)
   if (text) {
     url.searchParams.set('text', text)
   }

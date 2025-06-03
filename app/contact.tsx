@@ -1,7 +1,7 @@
 'use client'
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { WhatsAppUrl } from "@/lib/utils"
+import { getWhatsAppUrl } from "@/lib/utils"
 import type { FormEvent } from "react"
 
 export const ContactUsSection = () => {
@@ -11,7 +11,7 @@ export const ContactUsSection = () => {
         const data = Object.fromEntries(formData) as {
             message: string
         }
-        window.open(WhatsAppUrl({ text: data.message }), '_blank')
+        window.open(getWhatsAppUrl({ text: data.message }), '_blank')
     }
     return (
         <section className="w-full py-12 md:py-24 lg:py-32 bg-muted text-neutral-800" id="contact">
