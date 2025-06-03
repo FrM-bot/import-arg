@@ -1,5 +1,5 @@
 export const {
-    NEXT_PUBLIC_PHONE_NUMBER,
+    NEXT_PUBLIC_PHONE_NUMBER = '+5493624125046',
     CLIENT_BASE_URL = 'http://localhost:3000'
 } = process.env
 

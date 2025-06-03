@@ -1,6 +1,9 @@
+'use client'
+
 import React from 'react'
 import { PlusIcon as Icon } from '@radix-ui/react-icons'
-import { cn, formatNumber } from '@/lib/utils'
+import { cn } from '@/lib/utils'
+import { formatNumber } from '@/lib/formatNumber'
 import Link from 'next/link'
 import { routes } from '@/lib/routes'
 import { buttonVariants } from '../ui/button'

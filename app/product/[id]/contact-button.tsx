@@ -1,11 +1,11 @@
 'use client'
 
 import ShimmerButton from "@/components/magicui/shimmer-button"
-import { WhatsAppUrl } from "@/lib/utils"
+import { getWhatsAppUrl } from "@/lib/utils"
 
 export default function ContactButton({ productName }: { productName: string }) {
     const onContact = () => {
-        window.open(WhatsAppUrl({ text: productName }), '_blank', 'noopener noreferrer')
+        window.open(getWhatsAppUrl({ text: productName }), '_blank', 'noopener noreferrer')
     }
     return (
         <ShimmerButton onClick={onContact} className="shadow-2xl rounded-none w-full" borderRadius='0px'>
