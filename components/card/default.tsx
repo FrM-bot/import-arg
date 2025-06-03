@@ -1,6 +1,9 @@
+'use client'
+
 import React from 'react'
 import { PlusIcon as Icon } from '@radix-ui/react-icons'
-import { cn, formatNumber } from '@/lib/utils'
+import { cn } from '@/lib/utils'
+import { formatNumber } from '@/lib/formatNumber'
 import Link from 'next/link'
 import { routes } from '@/lib/routes'
 import { buttonVariants } from '../ui/button'
@@ -33,7 +36,7 @@ export function ProductCard({ title, image, price, id }: Props) {
             <p className="text-sm border font-light dark:border-white/[0.2] rounded-full mt-4 text-black border-neutral-900 dark:text-white px-3 py-0.5">
                 {formatNumber(price, { option: { currency: "ARS", style: "currency" } })}
             </p>
-            <Link href={routes.products.profile(id)} className={cn(buttonVariants(), 'w-full mt-4')}>
+            <Link href={routes.products.profile(id)} className={cn(buttonVariants(), 'w-full mt-4 rounded-none')}>
                 <span>Ver detalle</span>
             </Link>
         </div>

@@ -1,5 +1,7 @@
-import { WhatsAppUrl } from '@/lib/utils'
+'use client'
+import { getWhatsAppUrl } from '@/lib/utils'
 import React from 'react'
+import { env } from '@/lib/config'
 
 export default function Footer() {
     return (
@@ -15,12 +17,12 @@ export default function Footer() {
                         <a
                             target='_blank'
                             rel='noopener noreferrer'
-                            href={WhatsAppUrl()}
-                            className="text-gray-600 dark:text-gray-300 text-sm">+54 9 362 412-5046</a>
+                            href={getWhatsAppUrl()}
+                            className="text-gray-600 dark:text-gray-300 text-sm">{env.PHONE_NUMBER}</a>
                     </div>
                 </div>
                 <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-gray-500 dark:text-gray-400">
-                    © 2024 ImportARG.
+                    © {new Date().getFullYear()} ImportARG.
                 </div>
             </div>
         </footer>

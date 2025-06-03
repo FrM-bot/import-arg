@@ -1,19 +1,21 @@
-import { Onest } from 'next/font/google'
 import "./globals.css"
+import { Onest } from 'next/font/google'
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { cn } from "@/lib/utils"
 
 const onest = Onest({ subsets: ['latin'] })
 
-export default function RootLayout({
+export default function Layout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body
-        className={`${onest.className} antialiased bg-muted dark:text-neutral-100 text-neutral-700`}
+        className={cn(onest.className, "antialiased bg-muted dark:text-neutral-100 text-neutral-700")}
+        suppressHydrationWarning
       >
         <Header />
         {children}
