@@ -2,13 +2,13 @@ export * from "./formatDate"
 export * from "./formatNumber"
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-// import { PHONE_NUMBER, NEXT_PUBLIC_PHONE_NUMBER } from "@/lib/config"
+import { env } from "./config"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const WhatsAppUrlBaseUrl = 'https://wa.me/5493624125046'
+export const WhatsAppUrlBaseUrl = `https://wa.me/${env.PHONE_NUMBER}`
 
 export const WhatsAppUrl = ({ text }: { text?: string } = {}) => {
   const url = new URL(WhatsAppUrlBaseUrl)

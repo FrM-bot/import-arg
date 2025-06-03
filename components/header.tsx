@@ -7,7 +7,7 @@ import { MenuMobile } from './menu.mobile'
 
 export default function Header() {
     return (
-        <header className="sm:h-14 py-4 flex items-center justify-center fixed top-0 bg-black/90 backdrop-blur-md text-neutral-200 z-50 w-full">
+        <header className="sm:h-14 py-4 h-16 flex items-center justify-center fixed top-0 bg-black/50 backdrop-blur-sm text-neutral-200 z-50 w-full">
             <div className='container flex sm:items-center items-center gap-2 justify-between'>
                 <Link href={routes.home}>
                     <FadeText

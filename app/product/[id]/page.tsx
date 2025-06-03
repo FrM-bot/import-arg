@@ -5,7 +5,6 @@ import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { routes } from '@/lib/routes'
 import Link from 'next/link'
 import { buttonVariants } from '@/components/ui/button'
-import type { Metadata } from 'next'
 import Images from './images'
 import ContactButton from "./contact-button"
 import { notFound } from "next/navigation"
@@ -35,8 +34,11 @@ export async function generateStaticParams() {
     }))
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-    const product = await getProduct(params.id)
+type Params = Promise<{ id: string }>
+
+export async function generateMetadata({ params }: { params: Params }) {
+    const { id } = await params
+    const product = await getProduct(id)
 
     return {
         title: product.name,
@@ -58,8 +60,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     }
 }
 
-export default async function ProductDetailPage({ params }: { params: { id: string } }) {
-    const product = await getProduct(params.id)
+export default async function Page({ params }: { params: Params }) {
+    const { id } = await params
+    const product = await getProduct(id)
 
     return (
         <>
