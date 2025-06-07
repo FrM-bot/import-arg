@@ -1,0 +1,31 @@
+{
+    "data": [
+        {
+            "id": 2,
+            "documentId": "cx055c5vigs0o9bwj7xvqn55",
+            "name": "iPhone 16",
+            "slug": "apple-i-phone-16",
+            "price": 950,
+            "images": [
+                {
+                    "id": 5,
+                    "documentId": "bgpf5vpkyrsxkakij7k6ljat",
+                    "url": "/uploads/thumb_975708_phone_front_big_33ad300aeb.jpg"
+                },
+                {
+                    "id": 4,
+                    "documentId": "lvmibct101ltqne0tqymhuzk",
+                    "url": "/uploads/thumb_975723_default_big_e5b53a4437.webp"
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "pagination": {
+            "page": 1,
+            "pageSize": 25,
+            "pageCount": 1,
+            "total": 1
+        }
+    }
+}
