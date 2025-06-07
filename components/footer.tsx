@@ -1,7 +1,7 @@
 'use client'
 import { getWhatsAppUrl } from '@/lib/utils'
 import React from 'react'
-import { env } from '@/lib/config'
+import { env } from '@/config/env'
 
 export default function Footer() {
     return (

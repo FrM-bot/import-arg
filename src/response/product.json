@@ -1,0 +1,36 @@
+{
+    "data": {
+        "id": 2,
+        "documentId": "bxwsnba7xx4q25q063seqys5",
+        "name": "iPhone 16",
+        "description": [
+            {
+                "type": "paragraph",
+                "children": [
+                    {
+                        "text": "Apple iPhone 16 8GB RAM  128 de almacenamiento.",
+                        "type": "text"
+                    }
+                ]
+            }
+        ],
+        "slug": "i-phone-16",
+        "price": 950,
+        "createdAt": "2025-06-06T21:06:08.271Z",
+        "updatedAt": "2025-06-06T21:09:42.909Z",
+        "publishedAt": "2025-06-06T21:09:46.399Z",
+        "images": [
+            {
+                "id": 3,
+                "documentId": "iq2b6jp7osl6btb187zinvzu",
+                "url": "/uploads/thumb_975708_phone_front_big_ad264d4cd3.jpg"
+            },
+            {
+                "id": 2,
+                "documentId": "tm3ib1dh0uungps1lu2yw6j4",
+                "url": "/uploads/thumb_975723_default_big_725bc7719a.webp"
+            }
+        ]
+    },
+    "meta": {}
+}
