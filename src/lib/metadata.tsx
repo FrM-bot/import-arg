@@ -1,15 +1,14 @@
 import type { Metadata } from "next"
 import MetadataJSON from '@/data/metadata.json'
-import { env } from "@/config/env"
+// import { env } from "@/config/env"
 
 export const baseMetadata: Metadata = {
-    metadataBase: new URL(env.CLIENT_BASE_URL),
+    // metadataBase: new URL(env.CLIENT_BASE_URL),
     openGraph: {
       title: MetadataJSON.title,
       description: MetadataJSON.description,
       url: MetadataJSON.url,
       siteName: MetadataJSON.title,
-
       images: [
         {
           url: `${MetadataJSON.url}/hero.webp`, // Must be an absolute URL

@@ -1,6 +1,6 @@
 'use client'
 
-import ShimmerButton from "@/components/magicui/shimmer-button"
+import { ShimmerButton } from "@/components/magicui/shimmer-button"
 import { getWhatsAppUrl } from "@/lib/utils"
 
 export default function ContactButton({ productName }: { productName: string }) {
