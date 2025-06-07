@@ -1,0 +1,108 @@
+{
+    "object": "list",
+    "results": [
+        {
+            "object": "page",
+            "id": "1fe30e7c-0312-8059-a886-ed805f554fba",
+            "created_time": "2025-05-25T01:12:00.000Z",
+            "last_edited_time": "2025-05-25T01:22:00.000Z",
+            "created_by": {
+                "object": "user",
+                "id": "113d872b-594c-81a7-a863-000238941244"
+            },
+            "last_edited_by": {
+                "object": "user",
+                "id": "8e2b3999-fa6c-4e93-9976-66f4cb434960"
+            },
+            "cover": null,
+            "icon": null,
+            "parent": {
+                "type": "database_id",
+                "database_id": "1fe30e7c-0312-80d5-8081-c9cd2eba6b78"
+            },
+            "archived": false,
+            "in_trash": false,
+            "properties": {
+                "brand": {
+                    "id": "%3En~C",
+                    "type": "select",
+                    "select": {
+                        "id": "Hf<x",
+                        "name": "REALME",
+                        "color": "orange"
+                    }
+                },
+                "storage": {
+                    "id": "ITef",
+                    "type": "select",
+                    "select": {
+                        "id": "T_bE",
+                        "name": "512GB",
+                        "color": "yellow"
+                    }
+                },
+                "profit": {
+                    "id": "PLBE",
+                    "type": "formula",
+                    "formula": {
+                        "type": "number",
+                        "number": 67.32
+                    }
+                },
+                "ram": {
+                    "id": "%5Dflk",
+                    "type": "select",
+                    "select": {
+                        "id": "_r`R",
+                        "name": "12GB",
+                        "color": "orange"
+                    }
+                },
+                "price": {
+                    "id": "h%3De%3B",
+                    "type": "number",
+                    "number": 374
+                },
+                "total_price": {
+                    "id": "i%5CS%5C",
+                    "type": "formula",
+                    "formula": {
+                        "type": "number",
+                        "number": 441.32
+                    }
+                },
+                "model": {
+                    "id": "title",
+                    "type": "title",
+                    "title": [
+                        {
+                            "type": "text",
+                            "text": {
+                                "content": "12 PRO+",
+                                "link": null
+                            },
+                            "annotations": {
+                                "bold": false,
+                                "italic": false,
+                                "strikethrough": false,
+                                "underline": false,
+                                "code": false,
+                                "color": "default"
+                            },
+                            "plain_text": "12 PRO+",
+                            "href": null
+                        }
+                    ]
+                }
+            },
+            "url": "https://www.notion.so/12-PRO-1fe30e7c03128059a886ed805f554fba",
+            "public_url": null
+        }
+    ],
+    "next_cursor": "1fe30e7c-0312-8047-9da9-f14dd24ee404",
+    "has_more": true,
+    "type": "page_or_database",
+    "page_or_database": {},
+    "developer_survey": "https://notionup.typeform.com/to/bllBsoI4?utm_source=postman",
+    "request_id": "405a2f63-318b-42dd-82b3-b4690a67217f"
+}

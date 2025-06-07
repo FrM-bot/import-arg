@@ -1,0 +1,23 @@
+@base_url = http://localhost:1337
+
+@strapi_token = 
+
+### Home
+
+GET {{base_url}}/api/home?fields[0]=title&fields[1]=description&populate[cover][fields][0]=url
+Authorization: Bearer {{strapi_token}}
+
+### Products
+
+GET {{base_url}}/api/products?fields[0]=name&fields[1]=slug&fields[2]=price&populate[images][fields][0]=url&pagination[page]=1
+Authorization: Bearer {{strapi_token}}
+
+### Brands
+
+GET {{base_url}}/api/brands?fields[0]=name&fields[1]=slug&fields[2]=id
+Authorization: Bearer {{strapi_token}}
+
+### Product
+
+GET {{base_url}}/api/products/bxwsnba7xx4q25q063seqys5?populate[images][fields][0]=url
+Authorization: Bearer {{strapi_token}}
