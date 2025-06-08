@@ -1,5 +1,5 @@
 import { query } from "@/lib/strapi";
-const { STRAPI_URL } = process.env
+// const { STRAPI_URL } = process.env
 import type ProductResponse from "@/response/product.json"
 import type ProductsResponse from "@/response/products.json"
 
