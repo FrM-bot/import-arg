@@ -23,7 +23,7 @@ export default function ProductsList({ products, exchangeRate }: { products: Pro
 
   useEffect(() => {
     const prevProducts = [...productsList];
-    const newProducts = [...prevProducts, ...products];
+    const newProducts = [...prevProducts, ...(products || [])];
     // globalThis.window.sessionStorage.setItem("products", JSON.stringify(newProducts));
     setProductsList(newProducts);
   }, [products]);
