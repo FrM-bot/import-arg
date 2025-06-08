@@ -18,6 +18,8 @@ import { getExchangeRate } from "@/services/exchange";
 //   return product;
 // }
 
+export const revalidate = 60 * 60 * 12
+
 type Params = Promise<{ id: string }>;
 
 export async function generateMetadata({ params }: { params: Params }) {

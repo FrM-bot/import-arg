@@ -21,6 +21,9 @@ import Filters from "./filters.component";
 //   ]
 // }
 
+// each 30 minutes
+export const revalidate = 60 * 30
+
 async function getDatabase({
   cursor,
   pageSize,
