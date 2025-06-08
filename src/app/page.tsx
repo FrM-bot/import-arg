@@ -27,6 +27,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 60 * 60 * 12
+
 export default async function ProductLandingPage() {
   const { title, description, image } = await getHomeInfo()
 
