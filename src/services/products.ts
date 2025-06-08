@@ -1,5 +1,5 @@
 import { query } from "@/lib/strapi";
-const { STRAPI_URL } = process.env
+// const { STRAPI_URL } = process.env
 import type ProductResponse from "@/response/product.json"
 import type ProductsResponse from "@/response/products.json"
 
@@ -13,7 +13,8 @@ export const getProducts = ({
         name: product.name,
         slug: product.slug,
         price: product.price,
-        image: `${STRAPI_URL}${product.images[0].url}`
+        image: product.images[0].url
+        // image: `${STRAPI_URL}${product.images[0].url}`
     }))
 
     return { products, pagination: meta.pagination }
@@ -27,7 +28,8 @@ export const getProduct = (id: string) => query(`products/${id}?populate[images]
         name: product.name,
         slug: product.slug,
         price: product.price,
-        images: product.images.map((image) => `${STRAPI_URL}${image.url}`),
+        // images: product.images.map((image) => `${STRAPI_URL}${image.url}`),
+        images: product.images.map((image) => image.url),
         description: product.description
     }
 })
