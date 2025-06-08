@@ -22,7 +22,9 @@ import Filters from "./filters.component";
 // }
 
 // each 30 minutes
-export const revalidate = 60 * 30
+export const revalidate = 1800 // 60 * 30 = 1800 seconds (30 minutes)
+
+export const dynamicParams = true
 
 async function getDatabase({
   cursor,
@@ -104,7 +106,7 @@ function formatData(data: (typeof NotionDatabaseResponse)["results"]) {
   return products;
 }
 
-export default async function PriceListPage({
+export default async function Page({
   searchParams: searchParamsValue,
 }: {
   searchParams: Promise<{ cursor?: string; field?: string; term?: string }>;
