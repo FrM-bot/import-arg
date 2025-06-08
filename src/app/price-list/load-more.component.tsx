@@ -7,13 +7,17 @@ export function LoadMore({ next }: { next?: string }) {
   useEffect(() => {
     const urlValue = new URL(globalThis.window?.location.href || "");
     next && urlValue.searchParams.set("cursor", next || "");
+    // globalThis.window.scrollTo({
+    //   top: 0,
+    //   behavior: "smooth",
+    // })
     setUrl(urlValue);
   }, [next])
   
   return (
     <div className="flex justify-center mt-4">
       {next ? (
-        <Link href={url?.href || ""}>Cargar más</Link>
+        <Link href={url?.href || ""} scroll={false}>Cargar más</Link>
       ) : (
         <p>No hay más productos</p>
       )}

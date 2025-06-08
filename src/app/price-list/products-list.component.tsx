@@ -36,7 +36,7 @@ export default function ProductsList({ products, exchangeRate }: { products: Pro
           <TableHead>Marca</TableHead>
           <TableHead>Almacenamiento</TableHead>
           <TableHead>RAM</TableHead>
-          <TableHead>Precio</TableHead>
+          {/* <TableHead>Precio</TableHead> */}
           <TableHead>Precio en Pesos</TableHead>
         </TableRow>
       </TableHeader>
@@ -47,15 +47,6 @@ export default function ProductsList({ products, exchangeRate }: { products: Pro
             <TableCell>{product.brand}</TableCell>
             <TableCell>{product.storage}</TableCell>
             <TableCell>{product.ram}</TableCell>
-            <TableCell>
-              {formatNumber(product.totalPrice, {
-                option: {
-                  style: "currency",
-                  currencyDisplay: "narrowSymbol",
-                  currency: "USD",
-                },
-              })}
-            </TableCell>
             <TableCell>
               {formatNumber(product.totalPrice * exchangeRate * 1.01, {
                 option: {

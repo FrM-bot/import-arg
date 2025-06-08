@@ -18,7 +18,9 @@ import { getExchangeRate } from "@/services/exchange";
 //   return product;
 // }
 
-export const revalidate = 60 * 60 * 12
+export const revalidate = 43200 // 60 * 60 * 12 = 43200 seconds (12 hours)
+
+export const dynamicParams = true
 
 type Params = Promise<{ id: string }>;
 

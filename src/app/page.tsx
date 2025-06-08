@@ -27,9 +27,9 @@ export const metadata: Metadata = {
   },
 };
 
-export const revalidate = 60 * 60 * 12
+export const revalidate = 43200 // 60 * 60 * 12 = 43200 seconds (12 hours)
 
-export default async function ProductLandingPage() {
+export default async function Page() {
   const { title, description, image } = await getHomeInfo()
 
   return (
