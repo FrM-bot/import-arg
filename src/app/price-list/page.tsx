@@ -6,25 +6,35 @@ import { getExchangeRate } from "@/services/exchange";
 import { LoadMore } from "./load-more.component";
 import ProductsList from "./products-list.component";
 import Filters from "./filters.component";
-// {
-//   "filter": {
-//       "property": "Status",
-//       "select": {
-//           "equals": "Reading"
-//       }
-//   },
-//   "sorts": [
-//       {
-//       "property": "MODELO",
-//       "direction": "ascending"
-//       }
-//   ]
-// }
+
+const properties = {
+  model: 'title',
+  brand: 'select'
+} as const
+
+const propertiesQuery = {
+  model: 'contains',
+  brand: 'equals',
+} as const
+
+type Properties = keyof typeof properties
+
+// type PropertiesKey = typeof properties[keyof typeof properties]
 
 // each 30 minutes
 export const revalidate = 1800 // 60 * 30 = 1800 seconds (30 minutes)
 
 export const dynamicParams = true
+
+type Body = {
+  page_size?: number;
+  start_cursor?: string;
+  filter?: {
+    property: Properties;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
+  };
+}
 
 async function getDatabase({
   cursor,
@@ -34,32 +44,26 @@ async function getDatabase({
   cursor?: string;
   pageSize?: number;
   filter?: {
-    field: string;
-    term: string;
+    field: Properties;
+    q?: string;
   };
 }) {
-  const body = { page_size: pageSize } as {
-    page_size?: number;
-    start_cursor?: string;
-    filter?: {
-      property: string;
-      select: {
-        equals: string;
-      };
-    };
-  };
+  const body = { page_size: pageSize } as Body
 
   if (cursor && cursor !== "null") {
     body.start_cursor = cursor;
   }
-  if (filter?.term) {
+
+  if (filter?.q && filter.field) {
+    const fieldAsProperty = filter.field as Properties;
     body.filter = {
-      property: filter.field,
-      select: {
-        equals: filter.term,
+      property: fieldAsProperty,
+      [properties[fieldAsProperty]]: {
+        [propertiesQuery[fieldAsProperty]]: filter.q
       },
     };
   }
+  console.log(body)
   const response = await fetch(
     `https://api.notion.com/v1/databases/${process.env.NOTION_DATABASE_ID}/query`,
     {
@@ -67,7 +71,7 @@ async function getDatabase({
       headers: {
         Authorization: `Bearer ${process.env.NOTION_TOKEN}`,
         "Content-Type": "application/json",
-        "Notion-Version": "2022-06-28", // o la última versión
+        "Notion-Version": "2022-06-28",
       },
       body: JSON.stringify({
         ...body,
@@ -77,15 +81,17 @@ async function getDatabase({
             direction: "ascending",
           },
         ],
-      }), // puedes agregar filtros aquí
+      })
     }
-  );
+  )
 
   const data = (await response.json()) as typeof NotionDatabaseResponse;
+
   return {
     data: data.results,
     pagination: {
-      cursor: data.next_cursor,
+      current: cursor,
+      next: data.next_cursor,
       hasMore: data.has_more,
     },
   };
@@ -109,7 +115,7 @@ function formatData(data: (typeof NotionDatabaseResponse)["results"]) {
 export default async function Page({
   searchParams: searchParamsValue,
 }: {
-  searchParams: Promise<{ cursor?: string; field?: string; term?: string }>;
+  searchParams: Promise<{ cursor?: string; q?: string }>;
 }) {
   const searchParams = await searchParamsValue;
   const pageSize = 10;
@@ -119,8 +125,8 @@ export default async function Page({
     cursor: searchParams.cursor as string,
     pageSize,
     filter: {
-      field: searchParams.field as string,
-      term: searchParams.term as string,
+      field: "brand",
+      q: searchParams.q
     },
   });
   const products = formatData(data);
@@ -133,12 +139,11 @@ export default async function Page({
       </Typography>
       <Filters
         filter={{
-          field: searchParams.field as string,
-          term: searchParams.term as string,
+          brand: searchParams.q as string,
         }}
       />
-      <ProductsList products={products} exchangeRate={exchangeRate.venta} />
-      <LoadMore next={pagination.cursor} />
+      <ProductsList products={products} exchangeRate={exchangeRate.venta} q={searchParams.q} />
+      <LoadMore next={pagination.next} />
     </Container>
-  );
+  )
 }

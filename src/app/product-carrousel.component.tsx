@@ -48,7 +48,7 @@ export default async function ProductCarrousel() {
                       src: product.image,
                       alt: `${product.name} - ${product.id}`,
                     }}
-                    price={product.price * exchangeRate.venta * 1.01}
+                    price={product.price * exchangeRate.venta}
                   />
                 </div>
               </CarouselItem>

@@ -4,7 +4,7 @@ import MetadataJSON from "@/data/metadata.json";
 export default function AboutUs() {
   return (
     <section
-      className="w-full py-12 md:py-24 lg:py-32 bg-neutral-950"
+      className="w-full py-12 md:py-16 lg:py-20 bg-neutral-950"
       id="about"
     >
       <div className="container">
@@ -17,6 +17,22 @@ export default function AboutUs() {
               {MetadataJSON.description}
             </p>
           </div>
+        </div>
+        <div className="max-w-4xl relative w-full mx-auto pt-12 flex flex-wrap gap-16 justify-center items-center">
+        <picture className="rounded overflow-hidden flex max-w-[220px] -rotate-12 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+            <img
+              src="/seba.jpg"
+              alt="Seba"
+              className="w-full h-full object-cover aspect-square"
+            />
+          </picture>
+          <picture className="rounded overflow-hidden flex max-w-[220px] rotate-12 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+            <img
+              src="/franco.jpg"
+              alt="Franco"
+              className="w-full h-full object-cover aspect-square"
+            />
+          </picture>
         </div>
       </div>
     </section>
