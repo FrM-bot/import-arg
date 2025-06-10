@@ -8,7 +8,7 @@ export const getProducts = ({
 } = {}) => query(`products?fields[0]=name&fields[1]=slug&fields[2]=price&populate[images][fields][0]=url&pagination[page]=${page}`).then((res: typeof ProductsResponse) => {
     const { data, meta } = res
 
-    const products = data.map((product) => ({
+    const products = data?.map((product) => ({
         id: product.documentId,
         name: product.name,
         slug: product.slug,

@@ -4,7 +4,11 @@ import { cn, getWhatsAppUrl } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
 import { PlusIcon as Icon } from "@radix-ui/react-icons";
 
-export function ContactButton() {
+export function ContactButton({
+    text,
+}: {
+    text?: string;
+}) {
   return (
     <a
       className={cn(
@@ -12,7 +16,7 @@ export function ContactButton() {
         "h-12 w-12 relative bg-white/50 backdrop-blur-sm text-black"
       )}
       href={getWhatsAppUrl({
-        text: "Hola, me gustaría contactarte",
+        text: text || "Hola, me gustaría consultarte acerca de un producto",
       })}
       target="_blank"
       rel="noopener noreferrer"
