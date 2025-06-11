@@ -4,8 +4,9 @@ import type ProductResponse from "@/response/product.json"
 import type ProductsResponse from "@/response/products.json"
 
 export const getProducts = ({
-    page = 1
-} = {}) => query(`products?fields[0]=name&fields[1]=slug&fields[2]=price&populate[images][fields][0]=url&pagination[page]=${page}`).then((res: typeof ProductsResponse) => {
+    page = 1,
+    pageSize = 10
+} = {}) => query(`products?fields[0]=name&fields[1]=slug&fields[2]=price&populate[images][fields][0]=url&pagination[page]=${page}&pagination[pageSize]=${pageSize}`).then((res: typeof ProductsResponse) => {
     const { data, meta } = res
 
     const products = data?.map((product) => ({
