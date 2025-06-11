@@ -1,4 +1,4 @@
-@base_url = http://localhost:1337
+@base_url = 
 
 @strapi_token = 
 
